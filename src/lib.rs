@@ -409,7 +409,7 @@ impl RenderPass {
 
             let alpha_srgb_pixels: Option<Vec<_>> = match &image_delta.image {
                 egui::ImageData::Color(_) => None,
-                egui::ImageData::Font(a) => Some(a.srgba_pixels(1.0).collect()),
+                egui::ImageData::Font(a) => Some(a.srgba_pixels(Some(1.0)).collect()),
             };
 
             let image_data: &[u8] = match &image_delta.image {
